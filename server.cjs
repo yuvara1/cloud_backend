@@ -129,7 +129,7 @@ app.get('/access', async (req, res) => {
 app.post('/updateaccess', async (req, res) => {
      try {
           console.log(req.body)
-          await db.query(`UPDATE editor.userinfo SET access = ${req.body.access} WHERE Name = '${req.body.name}'`);
+          await db.query(`UPDATE userinfo SET access = ${req.body.access} WHERE Name = '${req.body.name}'`);
           console.log('Data updated successfully');
           res.status(200).send('Access updated successfully');
      } catch (error) {
